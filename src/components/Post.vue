@@ -5,11 +5,11 @@
       <div class="profile"></div>
       <span class="profile-name">{{InstarData.name}}</span>
     </div>
-    <div class="post-body" :style="{ backgroundImage : 'url(' + InstarData.postImage +')' }"></div>
+    <div class="post-body" :style="{ backgroundImage : `url(${InstarData.postImage})` }"></div>
     <div class="post-content">
       <p>{{InstarData.likes}} Likes</p>
-      <p><strong>{{InstarData.name}}</strong> {{InstarData.concat}}</p>
-      <p class="date">May 15</p>
+      <p><strong>{{InstarData.name}}</strong> {{InstarData.content}}</p>
+      <p class="date">{{InstarData.date}}</p>
     </div>
   </div>
 

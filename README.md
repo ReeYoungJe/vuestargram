@@ -3,19 +3,27 @@
 
 
  
-## Yarn 설치 하기 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 먼저 설치하센요
+## Yarn 설치 하기 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 먼저 설치하센요
 ```
 
 npm install --global yarn
 
 ```
 
+## AXIOS
+```
+https://www.npmjs.com/package/axios
+--------------------------------------------
+npm install axios
+bower install axios
+
+```
 
 
 
 ## Bootstrap 5.xx ver
 ```
-pm install bootstrap@5.2.2
+npm install bootstrap@5.2.2
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
