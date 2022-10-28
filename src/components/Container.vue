@@ -1,10 +1,6 @@
 <template>
   <div>
-    <Post :InstarData="InstarData[0]" />
-    <Post :InstarData="InstarData[1]" />
-    <Post :InstarData="InstarData[2]" />
-
-
+    <Post :InstarData="InstarData[i]" v-for="(InstarDataList, i) in InstarData" :key="InstarDataList" />
   </div>
 </template>
 
@@ -16,7 +12,7 @@ export default {
     Post : Post,
   },
   props : {
-    InstarData : Array,
+    InstarData : Object,
   }
 
 }
