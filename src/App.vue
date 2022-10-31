@@ -4,14 +4,15 @@
       <li @click="cancel();">Cancel</li>
     </ul>
     <ul class="header-button-right">
-      <li @click="next();">Next</li>
+      <li v-if="step === 1" @click="next();">Next</li>
+      <li v-if="step === 2" @click="publish();">발행</li>
     </ul>
     <img src="./assets/logo.png" class="logo"/>
   </div>
 
-  <Container :imgData="imgData" :InstarData="InstarData" :step="step" />
+  <Container @write="text = $event" :imgData="imgData" :InstarData="InstarData" :step="step" />
 
-  <div v-if="step == 0">
+  <div v-if="step === 0">
     <button @click="more">더보기</button>
 
   </div>
@@ -39,7 +40,8 @@ export default {
       InstarData : InstarData,
       count : 0,
       step : 0,
-      imgData : ''
+      imgData : '',
+      text :'',
     }
   },
   components: {
@@ -59,6 +61,20 @@ export default {
             alert('마지막 게시물 입니다.')
           })
 
+    },
+    publish(){
+      var InstarData = {
+        name: "Kim Hyun",
+        userImage: "https://placeimg.com/100/100/arch",
+        postImage:  this.imgData,
+        likes: 36,
+        date: "May 15",
+        liked: false,
+        content: this.text,
+        filter: "perpetua"
+      };
+      this.InstarData.unshift(InstarData);
+      this.step = 0
     },
     next(){
       this.step ++
