@@ -1,22 +1,27 @@
 <template>
   <div class="header">
     <ul class="header-button-left">
-      <li>Cancel</li>
+      <li @click="cancel();">Cancel</li>
     </ul>
     <ul class="header-button-right">
-      <li>Next</li>
+      <li @click="next();">Next</li>
     </ul>
     <img src="./assets/logo.png" class="logo"/>
   </div>
 
-  <Container :InstarData="InstarData" />
+  <Container :imgData="imgData" :InstarData="InstarData" :step="step" />
 
+  <div v-if="step == 0">
+    <button @click="more">더보기</button>
+
+  </div>
   <div class="footer">
     <ul class="footer-button-plus">
-      <input type="file" id="file" class="inputfile"/>
+      <input @change="upload" type="file" id="file" class="inputfile"/>
       <label for="file" class="input-plus">+</label>
     </ul>
   </div>
+
 
 
 </template>
@@ -25,16 +30,51 @@
 
 import Container from "@/components/Container";
 import InstarData from "@/assets/InstarData";
+import axios from 'axios'
+
 export default {
   name: 'App',
   data(){
     return{
       InstarData : InstarData,
+      count : 0,
+      step : 0,
+      imgData : ''
     }
   },
   components: {
     Container: Container,
-  }
+  },
+  methods: {
+
+    more() {
+      axios.get(`https://codingapple1.github.io/vue/more${this.count}.json`)
+          .then((show) => {
+            console.log(show.data);
+            this.InstarData.push(show.data)
+            this.count++;
+
+          })
+          .catch(() => {
+            alert('마지막 게시물 입니다.')
+          })
+
+    },
+    next(){
+      this.step ++
+    },
+    cancel(){
+      this.step = 0
+    },
+    upload(e){
+      let  file = e.target.files;
+      console.log(file[0]);
+      let url = URL.createObjectURL(file[0]);
+      console.log(url)
+      this.imgData = url
+      this.step ++;
+    }
+  },
 }
 </script>
 
