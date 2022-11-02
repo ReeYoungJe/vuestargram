@@ -5,7 +5,7 @@
       <div class="profile" :style="{ backgroundImage : `url(${InstarData.userImage})` }"    ></div>
       <span class="profile-name">{{InstarData.name}}</span>
     </div>
-    <div class="post-body" :style="{ backgroundImage : `url(${InstarData.postImage})` }"></div>
+    <div :class="`${InstarData.filter} post-body`" :style="{ backgroundImage : `url(${InstarData.postImage})` }"></div>
     <div class="post-content">
       <p>{{InstarData.likes}} Likes</p>
       <p><strong>{{InstarData.name}}</strong> {{InstarData.content}}</p>

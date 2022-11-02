@@ -7,7 +7,7 @@ export default[
         date: "May 15",
         liked: false,
         content: "뿌",
-        filter: "perpetua"
+        filter: "maven"
     },
     {
         name: "이영제2",
@@ -17,7 +17,7 @@ export default[
         date: "May 15",
         liked: false,
         content: "뿌",
-        filter: "perpetua"
+        filter: "brannan"
     },
     {
         name: "이영제3",
@@ -27,6 +27,6 @@ export default[
         date: "May 15",
         liked: false,
         content: "뿌",
-        filter: "perpetua"
+        filter: "valencia"
     }
 ]

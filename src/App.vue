@@ -9,8 +9,7 @@
     </ul>
     <img src="./assets/logo.png" class="logo"/>
   </div>
-
-  <Container @write="text = $event" :imgData="imgData" :InstarData="InstarData" :step="step" />
+  <Container :changeFileter="changeFileter"  @write="text = $event" :imgData="imgData" :InstarData="InstarData" :step="step" />
 
   <div v-if="step === 0">
     <button class="more"  @click="more">더보기</button>
@@ -22,7 +21,6 @@
       <label for="file" class="input-plus">+</label>
     </ul>
   </div>
-
 
 
 </template>
@@ -42,7 +40,15 @@ export default {
       step : 0,
       imgData : '',
       text :'',
+      changeFileter :'',
     }
+  },
+  mounted(){
+    this.emitter.on('FilterName' , (a)=>{
+      console.log(a);
+      this.changeFileter = a;
+      console.log(this.changeFileter)
+    });
   },
   components: {
     Container: Container,
@@ -52,10 +58,8 @@ export default {
     more() {
       axios.get(`https://codingapple1.github.io/vue/more${this.count}.json`)
           .then((show) => {
-            console.log(show.data);
             this.InstarData.push(show.data)
             this.count++;
-
           })
           .catch(() => {
             alert('마지막 게시물 입니다.')
@@ -64,8 +68,8 @@ export default {
     },
     publish(){
       var InstarData = {
-        name: "Kim Hyun",
-        userImage: "https://placeimg.com/100/100/arch",
+        name: "User Name",
+        userImage:  this.imgData,
         postImage:  this.imgData,
         likes: 36,
         date: "May 15",
@@ -84,9 +88,7 @@ export default {
     },
     upload(e){
       let  file = e.target.files;
-      console.log(file[0]);
       let url = URL.createObjectURL(file[0]);
-      console.log(url)
       this.imgData = url
       this.step ++;
     }
