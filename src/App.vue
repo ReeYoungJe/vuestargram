@@ -13,10 +13,10 @@
   <Container @write="text = $event" :imgData="imgData" :InstarData="InstarData" :step="step" />
 
   <div v-if="step === 0">
-    <button @click="more">더보기</button>
+    <button class="more"  @click="more">더보기</button>
 
   </div>
-  <div class="footer">
+  <div class="footer" v-if="step === 0" >
     <ul class="footer-button-plus">
       <input @change="upload" type="file" id="file" class="inputfile"/>
       <label for="file" class="input-plus">+</label>
@@ -181,5 +181,12 @@ ul {
   position: relative;
   border-right: 1px solid #eee;
   border-left: 1px solid #eee;
+}
+.more{
+  width:100%;
+  border:0px solid;
+  background-color: deepskyblue;
+  padding-top:20px;
+  padding-bottom:20px;
 }
 </style>
