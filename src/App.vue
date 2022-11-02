@@ -7,7 +7,7 @@
       <li v-if="step === 1" @click="next();">Next</li>
       <li v-if="step === 2" @click="publish();">발행</li>
     </ul>
-    <h2 style="position: absolute; left: 50%; transform: translate(-50%); font-size:17px; " >VueStarGram</h2>
+    <h2 style="position: absolute; left: 50%; transform: translate(-50%); font-size:17px; " >VueStaGram</h2>
   </div>
   <Container :changeFileter="changeFileter"  @write="text = $event" :imgData="imgData" :InstarData="InstarData" :step="step" />
 
