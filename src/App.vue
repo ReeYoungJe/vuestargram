@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" style="position: relative">
     <ul class="header-button-left">
       <li @click="cancel();">Cancel</li>
     </ul>
@@ -7,7 +7,7 @@
       <li v-if="step === 1" @click="next();">Next</li>
       <li v-if="step === 2" @click="publish();">발행</li>
     </ul>
-    <img src="./assets/logo.png" class="logo"/>
+    <h2 style="position: absolute; left: 50%; transform: translate(-50%); font-size:17px; " >VueStarGram</h2>
   </div>
   <Container :changeFileter="changeFileter"  @write="text = $event" :imgData="imgData" :InstarData="InstarData" :step="step" />
 
@@ -45,9 +45,7 @@ export default {
   },
   mounted(){
     this.emitter.on('FilterName' , (a)=>{
-      console.log(a);
       this.changeFileter = a;
-      console.log(this.changeFileter)
     });
   },
   components: {
