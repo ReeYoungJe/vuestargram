@@ -2,7 +2,7 @@
 
   <div class="post">
     <div class="post-header">
-      <div class="profile"></div>
+      <div class="profile" :style="{ backgroundImage : `url(${InstarData.userImage})` }"    ></div>
       <span class="profile-name">{{InstarData.name}}</span>
     </div>
     <div class="post-body" :style="{ backgroundImage : `url(${InstarData.postImage})` }"></div>
