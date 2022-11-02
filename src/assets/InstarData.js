@@ -1,32 +1,32 @@
 export default[
     {
-        name: "Kim Hyun",
-        userImage: "https://placeimg.com/100/100/arch",
-        postImage: "https://placeimg.com/640/480/arch",
+        name: "이영제",
+        userImage: "http://cogulmars.cafe24.com/img/04about_img04.png",
+        postImage: "http://cogulmars.cafe24.com/img/04about_img04.png",
         likes: 36,
         date: "May 15",
         liked: false,
-        content: "오늘 무엇을 했냐면요 아무것도 안했어요 ?",
+        content: "뿌",
         filter: "perpetua"
     },
     {
-        name: "John Doe",
-        userImage: "https://placeimg.com/200/200/people",
-        postImage: "https://placeimg.com/640/480/people",
-        likes: 20,
-        date: "Apr 20",
+        name: "이영제2",
+        userImage: "https://item.kakaocdn.net/do/4e350d28c29b9abe3ec4d727790363f3f43ad912ad8dd55b04db6a64cddaf76d",
+        postImage: "https://item.kakaocdn.net/do/4e350d28c29b9abe3ec4d727790363f3f43ad912ad8dd55b04db6a64cddaf76d",
+        likes: 36,
+        date: "May 15",
         liked: false,
-        content: "흔한 자랑스타그램",
-        filter: "clarendon"
+        content: "뿌",
+        filter: "perpetua"
     },
     {
-        name: "Minny",
-        userImage: "https://placeimg.com/100/100/animals",
-        postImage: "https://placeimg.com/640/480/animals",
-        likes: 49,
-        date: "Apr 4",
+        name: "이영제3",
+        userImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVX5_knsOrcwrcTDGtx0ILBkwubIQpEtX39zO_QunQ75THyTIM9R_Np6NvmcwgbKvk1qs&usqp=CAU",
+        postImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVX5_knsOrcwrcTDGtx0ILBkwubIQpEtX39zO_QunQ75THyTIM9R_Np6NvmcwgbKvk1qs&usqp=CAU",
+        likes: 36,
+        date: "May 15",
         liked: false,
-        content: "우리집 개는 화장실 물도 내림",
-        filter: "lofi"
+        content: "뿌",
+        filter: "perpetua"
     }
 ]
